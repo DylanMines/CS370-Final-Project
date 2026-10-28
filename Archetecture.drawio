@@ -1,0 +1,152 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
+  <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
+    <mxGraphModel dx="1188" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="p-t_8T6yNuIo1F_JNFQe-6" target="p-t_8T6yNuIo1F_JNFQe-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="460" y="450" />
+              <mxPoint x="270" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-1" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="440" as="sourcePoint" />
+            <mxPoint x="960" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-2" value="Kernel space: GPIO driver: WiringPi.h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B5739D;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="760" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-3" value="Ultrasonic sensor A&lt;div&gt;GPIO, 40KHZ&lt;/div&gt;&lt;div&gt;0.025 ms&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFB570;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-5" value="Ultrasonic sensor B&lt;div&gt;GPIO, 40KHZ&lt;/div&gt;&lt;div&gt;0.025 ms&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFB570;" vertex="1" parent="1">
+          <mxGeometry x="240" y="560" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-6" value="Microphone&lt;br&gt;&lt;div&gt;GPIO, 600KHZ&lt;/div&gt;&lt;div&gt;0.0017 ms&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFB570;" vertex="1" parent="1">
+          <mxGeometry x="400" y="560" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.344;entryY=1.051;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="p-t_8T6yNuIo1F_JNFQe-3" target="p-t_8T6yNuIo1F_JNFQe-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="520" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="p-t_8T6yNuIo1F_JNFQe-5" target="p-t_8T6yNuIo1F_JNFQe-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="300" y="460" />
+              <mxPoint x="210" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="p-t_8T6yNuIo1F_JNFQe-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="620" y="430" />
+              <mxPoint x="800" y="430" />
+              <mxPoint x="800" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-10" value="&lt;div&gt;Keypad&lt;/div&gt;&lt;div&gt;GPIO, Event driven&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFB570;" vertex="1" parent="1">
+          <mxGeometry x="560" y="560" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-12" value="&lt;div&gt;LCD&lt;/div&gt;&lt;div&gt;Parrellel data transfer&lt;/div&gt;&lt;div&gt;2 MHZ&lt;/div&gt;&lt;div&gt;500 ns&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFB570;" vertex="1" parent="1">
+          <mxGeometry x="720" y="560" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#67AB9F;" edge="1" parent="1" source="p-t_8T6yNuIo1F_JNFQe-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580" y="310" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="350" y="310" />
+              <mxPoint x="350" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-32" value="3 bounded&lt;div&gt;&amp;nbsp;buffers&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=#67AB9F;" vertex="1" connectable="0" parent="p-t_8T6yNuIo1F_JNFQe-31">
+          <mxGeometry x="-0.1382" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-14" value="Sampler process has a separate thread for each sensor to ensure failiures don&#39;t cascade." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#67AB9F;" vertex="1" parent="1">
+          <mxGeometry x="120" y="240" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-15" value="Thread A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#67AB9F;" vertex="1" parent="1">
+          <mxGeometry x="120" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-16" value="Thread B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#67AB9F;" vertex="1" parent="1">
+          <mxGeometry x="180" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-17" value="Thread C" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#67AB9F;" vertex="1" parent="1">
+          <mxGeometry x="240" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;fillColor=#67AB9F;" edge="1" parent="1" source="p-t_8T6yNuIo1F_JNFQe-40">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="710" y="280" as="sourcePoint" />
+            <mxPoint x="840" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="650" y="240" />
+              <mxPoint x="650" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-34" value="Log event +&lt;div&gt;reference&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=#67AB9F;" vertex="1" connectable="0" parent="p-t_8T6yNuIo1F_JNFQe-33">
+          <mxGeometry x="-0.4822" y="1" relative="1" as="geometry">
+            <mxPoint x="19" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-23" value="Thread A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#67AB9F;" vertex="1" parent="1">
+          <mxGeometry x="520" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-24" value="Thread B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#67AB9F;" vertex="1" parent="1">
+          <mxGeometry x="580" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-25" value="Thread C" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#67AB9F;" vertex="1" parent="1">
+          <mxGeometry x="640" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.999;entryY=0.196;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#67AB9F;" edge="1" parent="1" source="p-t_8T6yNuIo1F_JNFQe-30" target="p-t_8T6yNuIo1F_JNFQe-40">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="295" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="915" y="260" />
+              <mxPoint x="700" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-37" value="Specific event noted" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=#67AB9F;" vertex="1" connectable="0" parent="p-t_8T6yNuIo1F_JNFQe-36">
+          <mxGeometry x="-0.789" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-30" value="Analytics engine takes data and decides if its meaningful or not." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#67AB9F;" vertex="1" parent="1">
+          <mxGeometry x="840" y="150" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;startArrow=classic;startFill=1;fillColor=#67AB9F;" edge="1" parent="1" source="p-t_8T6yNuIo1F_JNFQe-39" target="p-t_8T6yNuIo1F_JNFQe-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-43" value="Request&lt;div&gt;logs&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=#67AB9F;" vertex="1" connectable="0" parent="p-t_8T6yNuIo1F_JNFQe-42">
+          <mxGeometry x="0.009" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-39" value="Interface through LCD.&lt;div&gt;Manages menus and output&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#67AB9F;" vertex="1" parent="1">
+          <mxGeometry x="760" y="320" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-40" value="Logger takes input from the sampler. This too has a thread for each sensor, this time to recieve data from the sampler and write it down." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#67AB9F;" vertex="1" parent="1">
+          <mxGeometry x="520" y="240" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p-t_8T6yNuIo1F_JNFQe-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.65;entryY=-0.013;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="p-t_8T6yNuIo1F_JNFQe-39" target="p-t_8T6yNuIo1F_JNFQe-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
