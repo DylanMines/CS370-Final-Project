@@ -2,11 +2,17 @@
 
 ### Architecture
 
-Dylan
+![Diagram](https://github.com/DylanMines/CS370-Final-Project/blob/main/Archetecture.drawio.png)
 
 ### Mechanism mapping
 
-Dylan
+Mechanism B: Interrupt driven input, with a head to head comparison against a polling design. Implemented by the keypad and interface processes. The interrupt here is important for the user experience. Without it, inputs could be dropped. If a process sits idle constantly checking for inputs in a loop, it wastes CPU time and can miss the input entirely if the human pressing the button is faster than the polling time. This is why we will use GPIO interrupts with our keypad. One pin for each row and column. Rows are inputs, columns are outputs. Outputs are set to low, inputs are connected to an internal pullup resistor. When a button is pressed, the pi detects the change on the input and scans to see which column corresponds to the pressed row. This triggers a function that allows an action to be performed based on the button pressed. 7 pins total, 4 interrupts used.
+
+Mechanism D: A custom storage layer: ring buffer, append-only log. The logger process is able to record events happening while being disconnected from those actual events. If the sampling process dies, the logger persists. If there is a critical bug in the interface, doesn't matter. The logger only adds and reads the record, nothing else. The ring buffers from the sampler give the logger wiggle room with timing, while ensuring timestamps are correct. 
+
+Mechanism F: A high-rate sampling pipeline with a no-drop guarantee: lock-free or single-producer/single-consumer ring between capture and consumption. Each sensor gets its own thread in the sampling process AND the logging process. A single bounded buffer exists between each thread, ensuring the logger will always see anything the sampler collects. When a thread decides that it is it's turn to sample, it can complete a full sampling (out and back for ultrasonic, analog input for microphone). Each sensor has a maximum sampling rate the sampling process can coordinate.
+
+Mechanism E: A multi-process architecture: sensors isolated in separate processes, a hub aggregating over IPC (shared memory, message queues, or Unix domain sock- ets), a supervisor that survives any child dying. Each process has its own responsibility, and doesn't touch anything else. The sampler never compares or processes, just passes things happily along to the logger. The logger doesn't touch I/O or try to compare entries, just writes them down. The analytics engine doesn't write to files or touch I/O. All of these places are possible failure points with only one process affected. Supervisor process is able to restart and connect IPC again, but doesn't take over anyone else's job in while doing so.
 
 ### Failure-mode table
 
@@ -33,4 +39,4 @@ Autumn
 
 ### AI-use plan
 
-Dylan
+We'll use claude code to help us write individual modules and to iterate with. System architecture, sampling rates, libraries, language, and kernel/user boundary remain squarely in our human hands. The architecture flow chart and mechanisms will stay as high-level descriptors. We might feed them into claude and iterate on strategy, but nothing will be written until the owner of a particular sub-system approves it. Logic processing is done entirely on-board. If the program can't run without an internet connected, it might as well not run at all. Individual functions, modules, data structures will be outsourced to claude. We'll give it a scope, a goal, how it fits into design, specific libraries, and read the plan. Only once approved to we allow claude to write, and we will not ignore tests along the way.
