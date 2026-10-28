@@ -23,7 +23,10 @@ Mechanism E: A multi-process architecture: sensors isolated in separate processe
 
 ### Storage and data
 
-Dylan
+We'll store both raw data from sensors and events from the analytics engine. 
+Raw data takes the form of a single line entry, with `timestamp`, `source`, `value`. Timestamp is when the data is generated, not read. Source indicates which sensor this is from (Ultrasonic A, Ultrasonic B, Microphone). Keypad doesn't deal with the sampler or the logger so it does not need to be written down. This is written at whatever the sampling rate of the sensors is. At the maximum values, 40,000 entries per second per sensor. That's too much. The sampling rate of sensors will likely be much slower, in the <=100 HZ range. 
+Event data takes a similar form. `timestamp`, `source`, and `event`. Timestamp is the same as before. Source indicates which sensors were used in the decision an event happened. Ultrasonic sensors found something the microphone didnt? Source will read `Ultrasonic A, Ultrasonic B`. This creates a trace to verify sensors are working together, and what they find. Event describes the event. Person entered the room, person left the room, noise heard inside house, door opened and person entered. This is the inferred context of the real world based on the sensor input. 
+Records are permanent, written on disk, and sequential. When a new record is written, it is stored up with other records. As soon as a blocks worth of records is collected, write them too disk, start over. Should power fail mid-write, everything up too that point is safely on disk already. The block that is being written to is thrown out, only a few individual records lost. At the sampling rate, this shouldn't be an issue.
 
 ### Constraints and substitutions
 
