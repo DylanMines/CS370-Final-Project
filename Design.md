@@ -2,7 +2,7 @@
 
 ### Architecture
 
-![Diagram](https://github.com/DylanMines/CS370-Final-Project/blob/main/Archetecture.drawio.png)
+![Diagram](https://github.com/DylanMines/CS370-Final-Project/blob/main/Architecture.drawio.png)
 
 ### Mechanism mapping
 
@@ -26,20 +26,36 @@ Mechanism E: A multi-process architecture: sensors isolated in separate processe
 We'll store both raw data from sensors and events from the analytics engine. 
 Raw data takes the form of a single line entry, with `timestamp`, `source`, `value`. Timestamp is when the data is generated, not read. Source indicates which sensor this is from (Ultrasonic A, Ultrasonic B, Microphone). Keypad doesn't deal with the sampler or the logger so it does not need to be written down. This is written at whatever the sampling rate of the sensors is. At the maximum values, 40,000 entries per second per sensor. That's too much. The sampling rate of sensors will likely be much slower, in the <=100 HZ range. 
 Event data takes a similar form. `timestamp`, `source`, and `event`. Timestamp is the same as before. Source indicates which sensors were used in the decision an event happened. Ultrasonic sensors found something the microphone didnt? Source will read `Ultrasonic A, Ultrasonic B`. This creates a trace to verify sensors are working together, and what they find. Event describes the event. Person entered the room, person left the room, noise heard inside house, door opened and person entered. This is the inferred context of the real world based on the sensor input. 
-Records are permanent, written on disk, and sequential. When a new record is written, it is stored up with other records. As soon as a blocks worth of records is collected, write them too disk, start over. Should power fail mid-write, everything up too that point is safely on disk already. The block that is being written to is thrown out, only a few individual records lost. At the sampling rate, this shouldn't be an issue.
+Records are permanent, written on disk, and sequential. When a new record is written, it is stored up with other records. As soon as a blocks worth of records is collected, write them too disk, start over. Should power fail mid-write, everything up to that point is safely on disk already. The block that is being written to is thrown out, only a few individual records lost. At the sampling rate, this shouldn't be an issue.
 
 ### Constraints and substitutions
 
-Autumn
+We had to reevaluate several pieces of our hardware to get it to fit into the specifications designated by the Memo document. Initially, we anticipated being able to run our software in a low-level fashion to maximize memory efficiency. However, we realized soon after the publication of our Memo that we would not be able to do this using a regular Raspberry Pi 3B. We would need to run our software on-top of a Raspberry Pi OS kernel in order to interface with the GPIO pins. In addition, this meant that we had to reevaluate our storage capacity limits. Previously, we anticipated that 64 MB would be acceptable, though after concluding the necessity of Pi OS, we purchased two 64 GB cards with increased throughput capabilities. We also realized that our microphone chip was _analog_, which also required that we assess means of converting this signal using an ADC. Outside of these contraints and minor substitutions we don't anticipate that our aimed goals will be hindered.
 
 ### Evaluation plan
 
-Autumn
+#### Timing
+
+#### Resource footprint
+
+#### One domain
+
+#### Fault-injection
+
+#### Mechanism Comparisons
+
+#### Limitations
 
 ### Ownership map
 
-Autumn
+**Autumn**
+- Logging engine
+- Interface engine
+
+**Dylan**
+- Sampler engine
+- Analytics engine
 
 ### AI-use plan
 
-We'll use claude code to help us write individual modules and to iterate with. System architecture, sampling rates, libraries, language, and kernel/user boundary remain squarely in our human hands. The architecture flow chart and mechanisms will stay as high-level descriptors. We might feed them into claude and iterate on strategy, but nothing will be written until the owner of a particular sub-system approves it. Logic processing is done entirely on-board. If the program can't run without an internet connected, it might as well not run at all. Individual functions, modules, data structures will be outsourced to claude. We'll give it a scope, a goal, how it fits into design, specific libraries, and read the plan. Only once approved to we allow claude to write, and we will not ignore tests along the way.
+We'll use Claude Code to help us write individual modules and to iterate with. System architecture, sampling rates, libraries, language, and kernel/user boundary remain squarely in our human hands. The architecture flow chart and mechanisms will stay as high-level descriptors. We might feed them into claude and iterate on strategy, but nothing will be written until the owner of a particular sub-system approves it. Logic processing is done entirely on-board. If the program can't run without an internet connected, it might as well not run at all. Individual functions, modules, data structures will be outsourced to claude. We'll give it a scope, a goal, how it fits into design, specific libraries, and read the plan. Only once approved to we allow claude to write, and we will not ignore tests along the way.
