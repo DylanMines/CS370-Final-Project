@@ -34,17 +34,7 @@ We had to reevaluate several pieces of our hardware to get it to fit into the sp
 
 ### Evaluation plan
 
-#### Timing
-
-#### Resource footprint
-
-#### One domain
-
-#### Fault-injection
-
-#### Mechanism Comparisons
-
-#### Limitations
+We anticipate timing to be an important metric for our system. Understanding _when_ data comes is important for detection mechanisms.
 
 ### Ownership map
 
